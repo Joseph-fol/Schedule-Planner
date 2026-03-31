@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Outfit", sans-serif;
+
+}
+
+.backgroundDiv {
+    position: relative;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+.svg {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.schedulePage {
+    position: relative;
+    z-index: 1;
+}
+
+.inputs {
+    color: white;
+    background: rgba(255, 185, 185, 0.08);
+    backdrop-filter: blur(7px);
+    border: 1px solid rgba(255, 251, 251, 0.288);
+}
+
+
+@media screen and (max-width:1250px) {
+    .schedulePage { 
+        margin-top: 150px;
+    }
+}

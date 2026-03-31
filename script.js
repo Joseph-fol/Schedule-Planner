@@ -4,11 +4,12 @@ const userTitle = document.getElementById("userTitle")
 const userDescription = document.getElementById("userDescription")
 const date = new Date
 
-
+const targetDate = document.getElementById("targetDate")
+const errMsg = document.getElementById("errMsg")
 
 const addSchedule = () => {
     userSchedule.innerHTML = ""
-    if (userTitle.value == "" || userDescription.value == "") {
+    if (userTitle.value == "" || userDescription.value == "" || targetDate.value == "") {
         alert("Input cannot be empty")
     } else {
         const inputs = {
@@ -18,11 +19,12 @@ const addSchedule = () => {
 
         details.push(inputs)
         userSchedule.style.display = "block"
-
         displaySchedule()
     }
 
-    
+    document.getElementById("userTitle").value = ""
+    document.getElementById("userDescription").value = ""
+    document.getElementById("targetDate").value = ""
 }
 
 function displaySchedule() {
@@ -30,10 +32,11 @@ function displaySchedule() {
     const userSchedule = document.getElementById("userSchedule")
     for (let i = 0; i < details.length; i++) {
         userSchedule.innerHTML += `
-        <div class="container col-lg-6 col-md-5 col-sm-6 col-10 px-4 py-4 rounded-4 mb-5 shadow-sm bg-white" style="border-left: 3px solid #050531;">
+        <div class="container col-lg-6 col-md-5 col-sm-6 col-10 px-4 py-4 text-white rounded-4 mb-5 shadow-sm" style="border-left: 3px solid #8b6830; background: rgba(255, 185, 185, 0.08);
+    backdrop-filter: blur(4px);">
 
                     <div class="d-flex justify-content-between">
-                        <h5 class="fw-bold">${details[i].title}</h5>
+                        <h5 class="fw-bold" style="color:#da9932;">${details[i].title}</h5>
                         <div class="d-flex gap-3">
                             <p>edit</p>
                             <p>delete</p>
@@ -41,10 +44,16 @@ function displaySchedule() {
                     </div>
                     <p>${details[i].description}</p>
 
-                    <div class="d-flex gap-3 col-10">
-                        <span class="fw-bold text-primary">Created:</span><p>${date.toDateString()}</p>
+                    <div class="d-flex gap-3 col-10 justify-content-between ">
+                        <div>
+                            <span class="fw-bold" style="color: #da9932;">Created:</span>
+                            <span>${date.toDateString()}</span>
+                        </div>
 
-                        <span class="fw-bold text-primary">Target Date:</span><p>${targetDate}</p>
+                        <div>
+                            <span class="fw-bold" style="color: #da9932;">Target Date:</span>
+                            <span>${targetDate}</span>
+                        </div>
                     </div>
                 </div>
         `
