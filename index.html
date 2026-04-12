@@ -143,7 +143,10 @@
                 </div>
 
                 <div class="alert alert-danger p-2 my-2 justify-content-between" style="display: none" id="errMsg">
-                    Inputs cannot be empty
+                    <div>Inputs cannot be empty <span id="errCount"></span></div>
+                    <div class="err-loader" aria-hidden="true">
+                        <div class="err-loader-bar" id="errLoader"></div>
+                    </div>
                     <!-- <p style="cursor: pointer;">X</p> -->
                 </div>
 
@@ -165,7 +168,6 @@
                 <button class="btn text-white d-block ms-auto my-3 fw-semibold shadow-none"
                     style="background-color: #8b6830;" onclick="addSchedule()">Add Schedule</button>
             </div>
-
             <div id="userSchedule" style="display: none;">
 
             </div>

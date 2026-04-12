@@ -33,6 +33,34 @@
     border: 1px solid rgba(255, 251, 251, 0.288);
 }
 
+/* .err-loader {
+    height: 4px;
+    margin-top: 10px;
+    background: rgba(255, 255, 255, 0.22);
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.err-loader-bar {
+    width: 0;
+    height: 100%;
+    background: #8b6830;
+}
+
+.err-loader-bar.run {
+    animation: errLoaderFill 4s linear forwards;
+}
+
+@keyframes errLoaderFill {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+} */
+
 
 @media screen and (max-width:1250px) {
     .schedulePage { 
